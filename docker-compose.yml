@@ -1,0 +1,27 @@
+# Docker Compose - Infrastructure locale AIS
+# Services : PostgreSQL 16
+# Lancement : docker-compose up -d
+# Arrêt : docker-compose down
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ais_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ais_user
+      POSTGRES_PASSWORD: ais_password
+      POSTGRES_DB: ais_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ais_user -d ais_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+    name: ais_postgres_data

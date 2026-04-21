@@ -1,0 +1,37 @@
+# ========== FastAPI & Server ==========
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
+websockets==12.0
+pydantic==2.6.1
+pydantic-settings==2.2.1
+python-multipart==0.0.9
+
+# ========== ASR ==========
+# Note : whisper-streaming sera installé manuellement en J5-J6 depuis GitHub
+faster-whisper==1.0.3
+numpy==1.26.4
+soundfile==0.12.1
+
+# ========== Base de données PostgreSQL ==========
+sqlalchemy==2.0.27
+alembic==1.13.1
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+
+# ========== Utilitaires ==========
+python-dotenv==1.0.1
+loguru==0.7.2
+httpx==0.26.0
+
+# ========== Tests ==========
+pytest==8.0.1
+pytest-asyncio==0.23.5
+pytest-cov==4.1.0
+
+# ========== Qualité de code (dev) ==========
+ruff==0.2.2
+black==24.2.0
+mypy==1.8.0
+
+# ========== Prototypage UI ==========
+streamlit==1.31.1
